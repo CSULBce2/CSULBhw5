@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>HW5 — Ex2: 400-level text only</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <h1>CSULB IS Courses</h1>
+
+  <p>Fall Classes Taken:</p>
+  <ul class="iscourses" id="fall">
+    <li class="300level">IS 300</li>
+    <li class="300level">IS 310</li>
+    <li class="300level">IS 340</li>
+    <li class="300level">IS 385</li>
+  </ul>
+
+  <p>Spring Classes Taken:</p>
+  <ul class="iscourses" id="spring">
+    <li class="300level">IS 320</li>
+    <li class="300level">IS 380</li>
+    <li class="400level">IS 445</li>
+    <li class="400level">IS 480</li>
+  </ul>
+
+  <h2>Output (text only)</h2>
+  <pre id="out"></pre>
+
+  <div><a href="../index.html">Back to main page</a></div>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const out = document.getElementById("out");
+      const items = document.getElementsByClassName("400level");
+      const lines = Array.from(items, li => li.textContent.trim());
+      out.textContent = lines.join("\n");
+    });
+  </script>
+</body>
+</html>
